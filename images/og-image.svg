@@ -10,7 +10,7 @@
   <circle cx="120" cy="560" r="220" fill="#C6FF3D" opacity="0.18"/>
   <rect x="90" y="255" width="64" height="64" rx="16" fill="#5B3DF6"/>
   <rect x="112" y="277" width="20" height="20" rx="4" fill="#C6FF3D"/>
-  <text x="174" y="305" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#FFFFFF">startesite<tspan fill="#8B7CFF">.ch</tspan></text>
+  <text x="174" y="305" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#FFFFFF">startsite<tspan fill="#8B7CFF">.ch</tspan></text>
   <text x="90" y="380" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#FFFFFF">Deine Website. Online in 7 Tagen.</text>
   <text x="90" y="425" font-family="Arial, sans-serif" font-size="22" fill="#C7C4DE">Moderne Onepager-Websites für KMU &amp; Selbstständige in der Schweiz</text>
 </svg>

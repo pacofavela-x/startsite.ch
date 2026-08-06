@@ -1,5 +1,5 @@
 /* =========================================================
-   startesite.ch — Interactions
+   startsite.ch — Interactions
    Vanilla JS only, no dependencies.
    ========================================================= */
 (function () {
@@ -116,7 +116,7 @@
         return;
       }
 
-      var subject = "Anfrage über startesite.ch – " + need;
+      var subject = "Anfrage über startsite.ch – " + need;
       var body =
         "Name: " + name + "\n" +
         "E-Mail: " + email + "\n" +
@@ -124,12 +124,12 @@
         "Nachricht:\n" + message;
 
       var mailtoLink =
-        "mailto:hallo@startesite.ch" +
+        "mailto:hallo@startsite.ch" +
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(body);
 
       window.location.href = mailtoLink;
-      status.textContent = "Dein E-Mail-Programm öffnet sich gleich – falls nicht, schreib uns direkt an hallo@startesite.ch.";
+      status.textContent = "Dein E-Mail-Programm öffnet sich gleich – falls nicht, schreib uns direkt an hallo@startsite.ch.";
     });
   }
 })();

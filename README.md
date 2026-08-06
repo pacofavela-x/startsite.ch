@@ -1,6 +1,6 @@
-# startesite.ch — Onepager
+# startsite.ch — Onepager
 
-Statische Marketing-Website für **startesite.ch** (Onepager-Websites für KMU, Selbstständige und Startups in der Schweiz). Reines HTML/CSS/JS, keine Build-Tools, GitHub-Pages-kompatibel.
+Statische Marketing-Website für **startsite.ch** (Onepager-Websites für KMU, Selbstständige und Startups in der Schweiz). Reines HTML/CSS/JS, keine Build-Tools, GitHub-Pages-kompatibel.
 
 ## Projektstruktur
 
@@ -23,7 +23,7 @@ Einfach `index.html` im Browser öffnen, oder mit einem lokalen Server (z. B. `n
 1. Repository auf GitHub erstellen und dieses Projekt pushen.
 2. Im Repo: **Settings → Pages → Source** auf den Branch `main` (Ordner `/root`) stellen.
 3. Nach ein paar Minuten ist die Seite unter `https://<username>.github.io/<repo>/` live.
-4. Für die eigene Domain `startesite.ch`: eine Datei `CNAME` mit Inhalt `startesite.ch` ins Root-Verzeichnis legen und beim Domain-Provider einen CNAME/ALIAS-Eintrag auf `<username>.github.io` setzen.
+4. Für die eigene Domain `startsite.ch`: eine Datei `CNAME` mit Inhalt `startsite.ch` ins Root-Verzeichnis legen und beim Domain-Provider einen CNAME/ALIAS-Eintrag auf `<username>.github.io` setzen.
 
 ## Design-Entscheid: Farbpalette
 
@@ -40,7 +40,7 @@ Alpine Momentum wurde umgesetzt, da sie Energie (Lime), Vertrauen (Indigo) und M
 - **Texte/Zahlen:** Referenzen-Zitate, Kundenname-Logos, Statistik-Zahlen (`50+`, `Ø 7 Tage` …) sind Platzhalter und sollten durch echte Werte ersetzt werden.
 - **Screenshots:** `images/og-image.svg` sowie die drei Mockup-Kacheln in der Referenzen-Section sind gestaltete Platzhalter (kein echter Website-Screenshot). Für Social-Sharing empfiehlt sich zusätzlich eine echte **PNG/JPG-Version** von `og-image.svg` (1200×630px), da nicht alle Plattformen SVG-OG-Bilder zuverlässig rendern.
 - **Rechtliches:** `impressum.html` und `datenschutz.html` enthalten Platzhalter in eckigen Klammern (`[...]`) — unbedingt durch echte Firmen-/Kontaktangaben ersetzen und bei Bedarf juristisch prüfen lassen.
-- **E-Mail:** Kontaktformular und Footer verweisen auf `hallo@startesite.ch` — Adresse bei Bedarf anpassen.
+- **E-Mail:** Kontaktformular und Footer verweisen auf `hallo@startsite.ch` — Adresse bei Bedarf anpassen.
 - **Kontaktformular:** Da die Seite rein statisch ist, öffnet der Formular-Submit aktuell einen `mailto:`-Link. Für ein "echtes" Formular ohne Backend eignet sich später z. B. Formspree, Web3Forms oder ein einfaches Serverless-Function-Setup.
 
 ## Performance & SEO
