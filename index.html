@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>startesite.ch – Onepager-Websites für Schweizer KMU & Selbstständige</title>
+<meta name="description" content="startesite.ch erstellt moderne Onepager-Websites für KMU, Selbstständige und Startups in der Schweiz. Online in rund 7 Tagen – schnell, professionell, ohne Agentur-Aufwand.">
+<meta name="keywords" content="Onepager erstellen Schweiz, Website erstellen KMU, Onepager Website, Webdesign Schweiz, günstige Website Schweiz">
+<meta name="author" content="startesite.ch">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://startesite.ch/">
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="startesite.ch">
+<meta property="og:title" content="startesite.ch – Deine Website. Online in 7 Tagen.">
+<meta property="og:description" content="Moderne Onepager-Websites für KMU, Selbstständige und Startups in der Schweiz. Schnell, professionell, ohne Agentur-Aufwand.">
+<meta property="og:image" content="https://startesite.ch/images/og-image.svg">
+<meta property="og:url" content="https://startesite.ch/">
+<meta property="og:locale" content="de_CH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="startesite.ch – Deine Website. Online in 7 Tagen.">
+<meta name="twitter:description" content="Moderne Onepager-Websites für KMU, Selbstständige und Startups in der Schweiz.">
+<meta name="twitter:image" content="https://startesite.ch/images/og-image.svg">
+
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ SVG ICON SPRITE (hidden, referenced via <use>) ============ -->
+<svg class="icon-sprite" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;">
+  <defs>
+    <symbol id="icon-lightning" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 5.8v5.4c0 5 3.2 8.1 7.5 9.8 4.3-1.7 7.5-4.8 7.5-9.8V5.8L12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.8 12.2l2.1 2.1 4.3-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-layers" viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 12l9 5 9-5M3 16l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M4 5h16v10H9l-5 4V5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 9.5h8M8 12.5h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+    <symbol id="icon-cross" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5v9M7.5 12h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-rocket" viewBox="0 0 24 24"><path d="M12 3c3 1.5 5 5 4.5 10-1.6.4-3.2.2-4.5-1-1.3 1.2-2.9 1.4-4.5 1C7 8 9 4.5 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="1.4" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 15.5c-1.5.5-2 2.5-2 4.5 2 0 4-.5 4.5-2M15.5 15.5c1.5.5 2 2.5 2 4.5-2 0-4-.5-4.5-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="M5 12.5 9.5 17 19 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-quote" viewBox="0 0 24 24"><path d="M8.5 6C6 7 4.5 9.2 4.5 12c0 2 1.3 3.3 3 3.3 1.5 0 2.6-1.1 2.6-2.5 0-1.3-.9-2.3-2.1-2.3-.2 0-.4 0-.6.1.3-1.5 1.5-2.7 3-3.3L8.5 6Zm9 0c-2.5 1-4 3.2-4 6 0 2 1.3 3.3 3 3.3 1.5 0 2.6-1.1 2.6-2.5 0-1.3-.9-2.3-2.1-2.3-.2 0-.4 0-.6.1.3-1.5 1.5-2.7 3-3.3L17.5 6Z" fill="currentColor"/></symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="1" fill="currentColor"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.8 10.5v6M7.8 8v.01M11.2 16.5v-3.6c0-1.2.9-2 2-2 1.1 0 1.8.8 1.8 2v3.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="logo" aria-label="startesite.ch – Startseite">
+      <span class="logo-mark" aria-hidden="true"></span>
+      startesite<span class="logo-dot">.ch</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#leistungen" data-nav>Leistungen</a></li>
+        <li><a href="#prozess" data-nav>Prozess</a></li>
+        <li><a href="#warum" data-nav>Warum wir</a></li>
+        <li><a href="#preise" data-nav>Preise</a></li>
+        <li><a href="#referenzen" data-nav>Referenzen</a></li>
+        <li><a href="#faq" data-nav>FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#kontakt" class="btn btn-primary btn-sm">Jetzt starten</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+        <svg class="icon icon-open"><use href="#icon-menu"></use></svg>
+        <svg class="icon icon-close-mobile"><use href="#icon-close"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="grid-overlay"></span>
+    </div>
+
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Onepager-Websites für KMU &amp; Selbstständige in der Schweiz</p>
+        <h1 class="hero-title">Deine Website.<br>Online in <span class="accent-text">7&nbsp;Tagen.</span></h1>
+        <p class="hero-sub">Wir konzipieren, gestalten und programmieren deinen professionellen Onepager – modern, schnell und ohne Agentur-Aufwand. Du sagst uns, was du brauchst. Wir liefern.</p>
+        <div class="hero-cta">
+          <a href="#kontakt" class="btn btn-accent btn-lg">
+            Kostenlose Anfrage stellen
+            <svg class="icon"><use href="#icon-arrow"></use></svg>
+          </a>
+          <a href="#referenzen" class="btn btn-ghost btn-lg">Beispiele ansehen</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="browser-card">
+          <div class="browser-bar">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="browser-content">
+            <div class="mock-nav">
+              <span class="mock-logo"></span>
+              <span class="mock-link"></span>
+              <span class="mock-link"></span>
+              <span class="mock-pill"></span>
+            </div>
+            <div class="mock-hero">
+              <div class="mock-line mock-line-lg"></div>
+              <div class="mock-line mock-line-md"></div>
+              <div class="mock-btn"></div>
+            </div>
+            <div class="mock-grid">
+              <span class="mock-card"></span>
+              <span class="mock-card"></span>
+              <span class="mock-card"></span>
+            </div>
+          </div>
+          <span class="floating-chip chip-1">🚀 Live in 7 Tagen</span>
+          <span class="floating-chip chip-2">✓ 100% Responsive</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ============ VERTRAUENSSIGNALE ============ -->
+  <section class="trust" id="trust" aria-label="Vertrauenssignale">
+    <div class="container">
+      <div class="trust-stats reveal">
+        <div class="stat">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Onepager realisiert</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">Ø 7 Tage</span>
+          <span class="stat-label">von Anfrage bis Launch</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Swiss Made &amp; Support</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">ab 29.90.-</span>
+          <span class="stat-label">CHF/Monat im Betrieb</span>
+        </div>
+      </div>
+
+      <div class="trust-logos reveal" role="group" aria-label="Vertraut von Unternehmen aus der Schweiz">
+        <p class="trust-logos-label">Vertraut von Unternehmen und Selbstständigen aus der ganzen Schweiz</p>
+        <div class="logo-row">
+          <span class="logo-placeholder">Bäckerei Grüter</span>
+          <span class="logo-placeholder">Studio Nadja</span>
+          <span class="logo-placeholder">Physio Zentrum</span>
+          <span class="logo-placeholder">Coiffeur Lenz</span>
+          <span class="logo-placeholder">TechStart AG</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LEISTUNGEN / PROZESS ============ -->
+  <section class="process" id="prozess">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Leistungen &amp; Ablauf</p>
+        <h2>So einfach geht's</h2>
+        <p class="section-lead">Von der Idee zur Live-Website – in vier klaren Schritten, ohne Überraschungen.</p>
+      </div>
+
+      <ol class="steps" id="leistungen">
+        <li class="step reveal">
+          <span class="step-number">01</span>
+          <h3>Anfrage &amp; Kurzgespräch</h3>
+          <p>Du schreibst uns, was du brauchst. In einem kurzen Gespräch klären wir Ziele, Umfang und Zeitrahmen – unverbindlich und kostenlos.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-number">02</span>
+          <h3>Konzept &amp; Design</h3>
+          <p>Wir erstellen ein individuelles Konzept inklusive Struktur, Text-Gerüst und Design-Vorschlag – abgestimmt auf deine Marke und Zielgruppe.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-number">03</span>
+          <h3>Umsetzung &amp; Feedback</h3>
+          <p>Wir setzen deinen Onepager um und holen dein Feedback ein. Anpassungen fliessen direkt ein, bis alles passt.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-number">04</span>
+          <h3>Launch &amp; Betreuung</h3>
+          <p>Deine Seite geht live. Auf Wunsch übernehmen wir Hosting, Wartung und Support – damit du dich um dein Business kümmern kannst.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ WARUM STARTESITE.CH ============ -->
+  <section class="why" id="warum">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Warum startesite.ch</p>
+        <h2>Statt klassischer Agentur</h2>
+        <p class="section-lead">Wir kombinieren die Geschwindigkeit eines Startups mit der Zuverlässigkeit einer Agentur.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon"><svg class="icon"><use href="#icon-lightning"></use></svg></div>
+          <h3>Schnell</h3>
+          <p>Online in rund einer Woche statt Monaten. Kein monatelanges Warten auf Entwürfe.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><svg class="icon"><use href="#icon-shield"></use></svg></div>
+          <h3>Transparent</h3>
+          <p>Klare Kommunikation, klare Preise. Keine versteckten Kosten, keine Überraschungen.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><svg class="icon"><use href="#icon-layers"></use></svg></div>
+          <h3>Modern</h3>
+          <p>Aktuelle Designs und Technologien – deine Website wirkt frisch, nicht wie ein Template von gestern.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><svg class="icon"><use href="#icon-chat"></use></svg></div>
+          <h3>Persönlich</h3>
+          <p>Direkter Kontakt mit den Leuten, die deine Seite bauen. Keine Warteschleifen, keine Projektleiter-Kette.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><svg class="icon"><use href="#icon-cross"></use></svg></div>
+          <h3>Swiss Quality</h3>
+          <p>Entwickelt in der Schweiz, für Schweizer KMU – mit einem Blick für lokale Ansprüche.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><svg class="icon"><use href="#icon-rocket"></use></svg></div>
+          <h3>Rundum-Service</h3>
+          <p>Von der Idee bis zum laufenden Betrieb: Hosting, Wartung und Support aus einer Hand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PREISE ============ -->
+  <section class="pricing" id="preise">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Preise &amp; Pakete</p>
+        <h2>Klar. Fair. Transparent.</h2>
+        <p class="section-lead">Zwei Bausteine: die einmalige Erstellung deines Onepagers und der laufende Betrieb danach.</p>
+      </div>
+
+      <!-- Erstellung -->
+      <div class="pricing-creation reveal">
+        <div class="creation-card">
+          <div class="creation-info">
+            <span class="pill">Einmalig</span>
+            <h3>Erstellung deines Onepagers</h3>
+            <p>Konzept, Design und Umsetzung – individuell auf dich abgestimmt. Der Aufwand unterscheidet sich von Projekt zu Projekt, darum gibt es hier keinen Preis von der Stange.</p>
+            <ul class="check-list">
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Konzept &amp; Struktur</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Individuelles Design</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Responsive für alle Geräte</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Unterstützung bei Texten &amp; Bildern</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> SEO-Grundlagen</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Launch-Begleitung</li>
+            </ul>
+          </div>
+          <div class="creation-price">
+            <span class="price-label">Preis</span>
+            <span class="price-value">Individuell</span>
+            <span class="price-note">auf Anfrage – je nach Umfang</span>
+            <a href="#kontakt" class="btn btn-primary btn-md">Kostenlose Anfrage stellen</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Laufender Betrieb -->
+      <div class="pricing-ongoing">
+        <div class="ongoing-head reveal">
+          <h3>Laufender Betrieb – Hosting, Wartung &amp; Support</h3>
+          <p>ab <strong>CHF 29.90.-/Monat</strong>, gestaffelt nach deinem Bedarf. Die folgenden Pakete sind Beispiele – wir stellen deinen Betrieb gerne individuell zusammen.</p>
+        </div>
+
+        <div class="plans">
+          <div class="plan-card reveal">
+            <h4>Starter</h4>
+            <div class="plan-price"><span>CHF</span>29.90<span>.-/Monat</span></div>
+            <ul class="check-list">
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Hosting &amp; SSL-Zertifikat</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Domain-Verwaltung</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Sicherheits-Updates</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> 1× kleinere Textänderung / Jahr</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-outline btn-md">Anfragen</a>
+          </div>
+
+          <div class="plan-card plan-featured reveal">
+            <span class="plan-tag">Beliebt</span>
+            <h4>Business</h4>
+            <div class="plan-price"><span>CHF</span>49.90<span>.-/Monat</span></div>
+            <ul class="check-list">
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Alles aus Starter</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Persönliches E-Mail-Postfach</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Änderungen 4× pro Jahr</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Priority-E-Mail-Support</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-accent btn-md">Anfragen</a>
+          </div>
+
+          <div class="plan-card reveal">
+            <h4>Premium</h4>
+            <div class="plan-price"><span>CHF</span>89.90<span>.-/Monat</span></div>
+            <ul class="check-list">
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Alles aus Business</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Monatliche Anpassungen</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Performance-Monitoring</li>
+              <li><svg class="icon"><use href="#icon-check"></use></svg> Telefonischer Support</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-outline btn-md">Anfragen</a>
+          </div>
+        </div>
+        <p class="pricing-footnote">Beispielhafte Pakete – Umfang, Änderungen und Support passen wir individuell an deinen Bedarf an.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERENZEN / TESTIMONIALS ============ -->
+  <section class="references" id="referenzen">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Referenzen</p>
+        <h2>Das sagen unsere Kunden</h2>
+        <p class="section-lead">Platzhalter-Referenzen – echte Kundenstimmen und Projekte folgen laufend.</p>
+      </div>
+
+      <div class="mockup-row reveal">
+        <div class="mockup-frame">
+          <div class="mockup-bar"><span></span><span></span><span></span></div>
+          <div class="mockup-body mockup-a"></div>
+        </div>
+        <div class="mockup-frame">
+          <div class="mockup-bar"><span></span><span></span><span></span></div>
+          <div class="mockup-body mockup-b"></div>
+        </div>
+        <div class="mockup-frame">
+          <div class="mockup-bar"><span></span><span></span><span></span></div>
+          <div class="mockup-body mockup-c"></div>
+        </div>
+      </div>
+
+      <div class="testimonials">
+        <figure class="testimonial-card reveal">
+          <svg class="icon quote-icon"><use href="#icon-quote"></use></svg>
+          <blockquote>„In einer Woche hatten wir eine Website, die endlich zu unserem Salon passt. Unkompliziert und schnell – genau das, was wir gesucht haben."</blockquote>
+          <figcaption>
+            <span class="testimonial-name">Nadia K.</span>
+            <span class="testimonial-role">Inhaberin, Coiffeur Studio Nadja (Platzhalter)</span>
+          </figcaption>
+        </figure>
+        <figure class="testimonial-card reveal">
+          <svg class="icon quote-icon"><use href="#icon-quote"></use></svg>
+          <blockquote>„Endlich eine Agentur, die nicht drei Monate für ein Angebot braucht. Der Preis war fair und alles war von Anfang an klar kommuniziert."</blockquote>
+          <figcaption>
+            <span class="testimonial-name">Marco R.</span>
+            <span class="testimonial-role">Geschäftsführer, TechStart AG (Platzhalter)</span>
+          </figcaption>
+        </figure>
+        <figure class="testimonial-card reveal">
+          <svg class="icon quote-icon"><use href="#icon-quote"></use></svg>
+          <blockquote>„Ich hatte keine Zeit für ein grosses Website-Projekt. startesite.ch hat mir alles abgenommen – vom Text bis zum Launch."</blockquote>
+          <figcaption>
+            <span class="testimonial-name">Elena B.</span>
+            <span class="testimonial-role">Physiotherapeutin (Platzhalter)</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>Häufige Fragen</h2>
+        <p class="section-lead">Die wichtigsten Antworten – kurz und ehrlich.</p>
+      </div>
+
+      <div class="accordion reveal">
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Was kostet die Erstellung eines Onepagers?</span>
+            <svg class="icon"><use href="#icon-chevron"></use></svg>
+          </button>
+          <div class="accordion-panel">
+            <p>Das ist individuell und hängt vom Umfang deines Projekts ab (z. B. Anzahl Sections, Sprachen, Umfang der Texte und Bilder). Nach einem kurzen, kostenlosen Gespräch erhältst du eine transparente Offerte – ganz ohne versteckte Kosten.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Was ist im monatlichen Preis enthalten?</span>
+            <svg class="icon"><use href="#icon-chevron"></use></svg>
+          </button>
+          <div class="accordion-panel">
+            <p>Der laufende Betrieb beginnt ab CHF 29.90.-/Monat und beinhaltet je nach gewähltem Paket Hosting, Domain-Verwaltung, SSL-Zertifikat, Sicherheits-Updates, ein E-Mail-Postfach sowie eine bestimmte Anzahl Änderungen und Support. Wir stellen das passende Paket gemeinsam mit dir zusammen.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Wie lange dauert die Umsetzung?</span>
+            <svg class="icon"><use href="#icon-chevron"></use></svg>
+          </button>
+          <div class="accordion-panel">
+            <p>Im Schnitt dauert es rund 7 Tage von der Anfrage bis zur Live-Schaltung – je nach Umfang und wie schnell wir Feedback und Inhalte von dir erhalten.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Kann ich meine Website später erweitern?</span>
+            <svg class="icon"><use href="#icon-chevron"></use></svg>
+          </button>
+          <div class="accordion-panel">
+            <p>Ja. Ein Onepager ist ein perfekter Start – bei Bedarf erweitern wir ihn später um zusätzliche Seiten oder Funktionen.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Brauche ich schon eigene Texte und Bilder?</span>
+            <svg class="icon"><use href="#icon-chevron"></use></svg>
+          </button>
+          <div class="accordion-panel">
+            <p>Nein, nicht zwingend. Wir unterstützen dich bei der Textstruktur und beraten dich beim Bildmaterial – du musst nicht bei null anfangen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KONTAKT ============ -->
+  <section class="contact" id="kontakt">
+    <div class="contact-bg" aria-hidden="true">
+      <span class="blob blob-3"></span>
+    </div>
+    <div class="container contact-inner">
+      <div class="section-head reveal light">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Bereit für deinen Onepager?</h2>
+        <p class="section-lead">Schreib uns kurz, was du brauchst – wir melden uns innerhalb von 1–2 Werktagen mit einem unverbindlichen Vorschlag.</p>
+      </div>
+
+      <div class="contact-grid reveal">
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Dein Name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="deine@email.ch" required>
+          </div>
+          <div class="form-row">
+            <label for="need">Was brauchst du?</label>
+            <select id="need" name="need">
+              <option value="Neuer Onepager">Neuen Onepager erstellen lassen</option>
+              <option value="Laufender Betrieb">Laufenden Betrieb / Hosting</option>
+              <option value="Beides">Beides</option>
+              <option value="Etwas anderes">Etwas anderes</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" rows="4" placeholder="Erzähl uns kurz von deinem Projekt…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent btn-lg btn-full">
+            Anfrage senden
+            <svg class="icon"><use href="#icon-arrow"></use></svg>
+          </button>
+          <p class="form-fallback">Lieber direkt per E-Mail? Schreib uns an <a href="mailto:hallo@startesite.ch">hallo@startesite.ch</a></p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="#top" class="logo footer-logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      startesite<span class="logo-dot">.ch</span>
+    </a>
+
+    <p class="footer-tagline">Onepager-Websites für die Schweiz – schnell, professionell, unkompliziert.</p>
+
+    <div class="footer-social" aria-label="Social Media">
+      <a href="#" aria-label="Instagram (Platzhalter)"><svg class="icon"><use href="#icon-instagram"></use></svg></a>
+      <a href="#" aria-label="LinkedIn (Platzhalter)"><svg class="icon"><use href="#icon-linkedin"></use></svg></a>
+    </div>
+
+    <nav class="footer-links" aria-label="Rechtliches">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+
+    <p class="footer-copy">&copy; <span id="year"></span> startesite.ch – Alle Rechte vorbehalten.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
