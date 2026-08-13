@@ -9,6 +9,38 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------- Hero mockup: cursor-driven 3D tilt + glossy highlight ---------- */
+  var heroVisual = document.querySelector(".hero-visual");
+  var tiltCard = document.getElementById("hero-tilt-card");
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var supportsFineHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if (heroVisual && tiltCard && !prefersReducedMotion && supportsFineHover) {
+    var bounds = null;
+
+    heroVisual.addEventListener("pointerenter", function () {
+      bounds = heroVisual.getBoundingClientRect();
+      tiltCard.classList.add("is-tilting");
+    });
+
+    heroVisual.addEventListener("pointermove", function (e) {
+      if (!bounds) bounds = heroVisual.getBoundingClientRect();
+      var px = (e.clientX - bounds.left) / bounds.width;
+      var py = (e.clientY - bounds.top) / bounds.height;
+      var rotateY = (px - 0.5) * 14;
+      var rotateX = (0.5 - py) * 10;
+      tiltCard.style.transform = "rotateY(" + rotateY.toFixed(2) + "deg) rotateX(" + rotateX.toFixed(2) + "deg)";
+      tiltCard.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
+      tiltCard.style.setProperty("--my", (py * 100).toFixed(1) + "%");
+    });
+
+    heroVisual.addEventListener("pointerleave", function () {
+      tiltCard.classList.remove("is-tilting");
+      tiltCard.style.transform = "";
+      bounds = null;
+    });
+  }
+
   /* ---------- Sticky header shadow on scroll ---------- */
   var header = document.querySelector(".site-header");
   function onScroll() {
