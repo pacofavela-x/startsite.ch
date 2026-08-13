@@ -1,6 +1,6 @@
-# startsite.ch — Onepager
+# startsite.ch — Website
 
-Statische Marketing-Website für **startsite.ch** (Onepager-Websites für KMU, Selbstständige und Startups in der Schweiz). Reines HTML/CSS/JS, keine Build-Tools, GitHub-Pages-kompatibel.
+Statische Marketing-Website für **startsite.ch** (Websites für KMU, Selbstständige und Startups in der Schweiz). Reines HTML/CSS/JS, keine Build-Tools, GitHub-Pages-kompatibel.
 
 ## Projektstruktur
 
@@ -47,5 +47,5 @@ Alpine Momentum wurde umgesetzt, da sie Energie (Lime), Vertrauen (Indigo) und M
 
 - Keine JS-Frameworks, keine schweren Libraries — nur Vanilla JS mit `IntersectionObserver`.
 - Einzige externe Abhängigkeit: Google Fonts (Space Grotesk, Inter) via `preconnect` + `display=swap`.
-- Semantisches HTML, Alt-Texte/ARIA-Labels, OpenGraph/Twitter-Card-Tags, `title`/`meta description` mit Bezug auf "Onepager erstellen Schweiz".
+- Semantisches HTML, Alt-Texte/ARIA-Labels, OpenGraph/Twitter-Card-Tags, `title`/`meta description` mit Bezug auf "Website erstellen Schweiz".
 - Vor dem Launch empfiehlt sich ein Lighthouse-Check in Chrome DevTools.
