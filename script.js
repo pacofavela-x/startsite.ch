@@ -141,19 +141,21 @@
       var name = form.name.value.trim();
       var email = form.email.value.trim();
       var need = form.need.value;
+      var phone = form.phone ? form.phone.value.trim() : "";
       var message = form.message.value.trim();
 
-      if (!name || !email || !message) {
-        status.textContent = "Bitte fülle Name, E-Mail und Nachricht aus.";
+      if (!name || !email) {
+        status.textContent = "Bitte fülle Name und E-Mail aus.";
         return;
       }
 
-      var subject = "Anfrage über startsite.ch – " + need;
+      var subject = "Erstgespräch-Anfrage über startsite.ch – " + need;
       var body =
         "Name: " + name + "\n" +
         "E-Mail: " + email + "\n" +
+        (phone ? "Telefon: " + phone + "\n" : "") +
         "Anliegen: " + need + "\n\n" +
-        "Nachricht:\n" + message;
+        "Nachricht:\n" + (message || "(keine Nachricht angegeben)");
 
       var mailtoLink =
         "mailto:hallo@startsite.ch" +
@@ -161,7 +163,22 @@
         "&body=" + encodeURIComponent(body);
 
       window.location.href = mailtoLink;
-      status.textContent = "Dein E-Mail-Programm öffnet sich gleich – falls nicht, schreib uns direkt an hallo@startsite.ch.";
+      status.textContent = "Dein E-Mail-Programm öffnet sich gleich – falls nicht, ruf uns direkt an oder schreib uns an hallo@startsite.ch.";
     });
+  }
+
+  /* ---------- Sticky mobile CTA: show once past hero, hide once contact form is reached ---------- */
+  var mobileCtaBar = document.getElementById("mobile-cta-bar");
+  var heroSection = document.getElementById("hero");
+  var kontaktSection = document.getElementById("kontakt");
+  if (mobileCtaBar && heroSection && kontaktSection) {
+    var onScrollCta = function () {
+      var heroBottom = heroSection.getBoundingClientRect().bottom;
+      var kontaktTop = kontaktSection.getBoundingClientRect().top;
+      var shouldShow = heroBottom < 0 && kontaktTop > 120;
+      mobileCtaBar.classList.toggle("is-visible", shouldShow);
+    };
+    onScrollCta();
+    window.addEventListener("scroll", onScrollCta, { passive: true });
   }
 })();
