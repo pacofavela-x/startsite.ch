@@ -825,12 +825,22 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
 @media (min-width: 760px) {
   .compare {
     grid-template-columns: minmax(96px, 0.85fr) repeat(3, 1fr);
+    /* Explicit row count so `grid-row: 1 / -1` on .compare-highlight resolves
+       against real lines — negative line indices only count explicit tracks,
+       and with no grid-template-rows at all "-1" would just mean "1". */
+    grid-template-rows: repeat(6, auto);
     column-gap: 1.25rem;
   }
   .compare-highlight {
     display: block;
+    /* position:absolute takes this out of grid auto-placement — otherwise, as a
+       normal (in-flow) grid item spanning column 4 / all rows, it would reserve
+       those cells and push every auto-placed sibling that follows it in the DOM
+       one slot to the right/down. */
+    position: absolute;
     grid-column: 4;
     grid-row: 1 / -1;
+    inset: 0; /* stretch to fill the grid area — abspos grid items don't do this by default */
     background: linear-gradient(160deg, var(--primary-tint), var(--surface) 75%);
     border: 1.5px solid var(--primary-tint);
     border-radius: var(--r-md);
