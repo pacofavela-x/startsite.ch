@@ -632,6 +632,49 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
 .portfolio-case p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
 .portfolio-case p strong { color: var(--ink); }
 
+/* ---------- Problem / Nutzen ---------- */
+.problem { padding: clamp(4rem, 8vw, 7rem) 0; }
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 760px) { .problem-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.problem-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+}
+.problem-card-positive {
+  border-color: var(--primary-tint);
+  background: linear-gradient(160deg, var(--primary-tint), var(--surface) 60%);
+}
+
+.problem-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--r-full);
+  margin-bottom: 1.4rem;
+}
+.problem-tag-negative { background: var(--bg-soft); color: var(--muted); }
+.problem-tag-positive { background: var(--primary); color: #fff; }
+
+.cross-list { display: flex; flex-direction: column; gap: 0.9rem; }
+.cross-list li,
+.problem-card .check-list li {
+  align-items: flex-start;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.cross-list .icon { color: var(--muted-soft); width: 1.1em; height: 1.1em; flex-shrink: 0; margin-top: 0.15em; }
+.problem-card .check-list .icon { margin-top: 0.15em; }
+
 /* ---------- Process ---------- */
 .process { padding: clamp(4rem, 8vw, 7rem) 0; }
 
@@ -682,6 +725,40 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
     background: var(--line);
   }
 }
+
+.timeline-intro {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+  max-width: 40rem;
+}
+.timeline-intro h3 { margin-bottom: 0.5rem; }
+.timeline-intro p { color: var(--muted); font-size: 0.92rem; }
+
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem 1.5rem;
+  margin-top: 2rem;
+}
+.timeline-item {
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.timeline-day {
+  align-self: flex-start;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--primary);
+  background: var(--primary-tint);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--r-full);
+}
+.timeline-item-launch .timeline-day { color: var(--accent-ink); background: var(--accent); }
+.timeline-label { font-size: 0.88rem; color: var(--muted); line-height: 1.45; }
 
 /* ---------- Why ---------- */
 .why { padding: clamp(4rem, 8vw, 7rem) 0; background: var(--bg-soft); }
