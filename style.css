@@ -998,6 +998,7 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
   margin-bottom: 0.9rem;
 }
 .ongoing-eyebrow-dark { color: var(--accent-ink); background: var(--accent); }
+.ongoing-head strong.highlight-accent { color: var(--accent); font-weight: 700; }
 
 /* Two-step price overview: the single number a non-technical visitor
    needs from each half of the section, before the detailed packages. */
