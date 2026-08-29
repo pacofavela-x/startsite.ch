@@ -638,20 +638,33 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
 .problem-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1.75rem;
+  align-items: center;
 }
-@media (min-width: 760px) { .problem-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 760px) {
+  .problem-grid { grid-template-columns: 1fr auto 1fr; gap: 0; }
+}
 
 .problem-card {
-  background: var(--surface);
+  background: var(--bg-soft);
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
   padding: clamp(1.75rem, 3vw, 2.5rem);
 }
+/* The positive card visually "wins": stronger surface, colored border and
+   permanent elevation, so it reads as the outcome you'd choose — not just
+   the second half of a neutral comparison. */
 .problem-card-positive {
-  border-color: var(--primary-tint);
-  background: linear-gradient(160deg, var(--primary-tint), var(--surface) 60%);
+  background: linear-gradient(160deg, var(--primary-tint), var(--surface) 65%);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-strong);
+  position: relative;
+  z-index: 1;
 }
+/* Note: deliberately no transform:scale() on .problem-card-positive —
+   .reveal.is-visible (2 classes) would win the cascade over a single-class
+   transform rule and silently cancel it once the scroll-reveal animation
+   finishes. Prominence comes from border/shadow/background instead. */
 
 .problem-tag {
   display: inline-block;
@@ -661,19 +674,54 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
   border-radius: var(--r-full);
   margin-bottom: 1.4rem;
 }
-.problem-tag-negative { background: var(--bg-soft); color: var(--muted); }
+.problem-tag-negative { background: var(--surface); color: var(--muted); border: 1px solid var(--line); }
 .problem-tag-positive { background: var(--primary); color: #fff; }
 
-.cross-list { display: flex; flex-direction: column; gap: 0.9rem; }
+/* Connector bridges the two cards on desktop — "this becomes that" */
+.problem-connector { display: none; }
+@media (min-width: 760px) {
+  .problem-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #fff;
+    box-shadow: var(--shadow-strong);
+    z-index: 2;
+  }
+  .problem-connector .icon { width: 1.3em; height: 1.3em; }
+}
+
+.problem-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.problem-icon-badge .icon { width: 0.85em; height: 0.85em; }
+.problem-icon-negative { background: var(--line-soft); color: var(--muted-soft); }
+.problem-icon-positive { background: var(--accent); }
+
+.cross-list { display: flex; flex-direction: column; gap: 1rem; }
 .cross-list li,
 .problem-card .check-list li {
-  align-items: flex-start;
+  align-items: center;
+  gap: 0.85rem;
   font-size: 0.92rem;
   color: var(--muted);
-  line-height: 1.5;
+  line-height: 1.45;
 }
-.cross-list .icon { color: var(--muted-soft); width: 1.1em; height: 1.1em; flex-shrink: 0; margin-top: 0.15em; }
-.problem-card .check-list .icon { margin-top: 0.15em; }
+.problem-card-positive .check-list li { color: var(--ink); font-weight: 500; }
+/* Beats the global .check-list .icon lime-on-icon rule so the checkmark
+   reads dark against its own lime badge instead of lime-on-lime. */
+.problem-card-positive .check-list .icon { color: var(--accent-ink); }
 
 /* ---------- Process ---------- */
 .process { padding: clamp(4rem, 8vw, 7rem) 0; }
