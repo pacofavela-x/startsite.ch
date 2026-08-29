@@ -1,6 +1,6 @@
 # startsite.ch — Website
 
-Statische Marketing-Website für **startsite.ch** (Websites für KMU, Selbstständige und Startups in der Schweiz). Reines HTML/CSS/JS, keine Build-Tools, GitHub-Pages-kompatibel.
+Statische Marketing-Website für **startsite.ch** (Websites für Firmen, Selbstständige und Privatpersonen in der Schweiz). Reines HTML/CSS/JS, keine Build-Tools, GitHub-Pages-kompatibel.
 
 ## Projektstruktur
 
