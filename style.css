@@ -974,18 +974,18 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
 /* Erstellung sits on a dark "stage" so it reads as the primary decision;
    the plan-cards keep their normal light surface and float on top of it —
    Betrieb below stays plain/light to read as the smaller follow-on choice. */
-.creation-stage {
+.pricing-stage {
   background: linear-gradient(135deg, var(--dark), var(--dark-soft));
   border-radius: var(--r-lg);
   padding: clamp(1.75rem, 4vw, 3rem);
   position: relative;
   overflow: hidden;
 }
-.creation-stage .ongoing-head h3 { color: var(--white); }
-.creation-stage .ongoing-head p { color: rgba(255, 255, 255, 0.72); }
-.creation-stage .plan-fit { color: rgba(255, 255, 255, 0.55); }
-.creation-stage .pricing-footnote { color: rgba(255, 255, 255, 0.5); }
-.creation-stage .plan-card { box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35); }
+.pricing-stage .ongoing-head h3 { color: var(--white); }
+.pricing-stage .ongoing-head p { color: rgba(255, 255, 255, 0.72); }
+.pricing-stage .plan-fit { color: rgba(255, 255, 255, 0.55); }
+.pricing-stage .pricing-footnote { color: rgba(255, 255, 255, 0.5); }
+.pricing-stage .plan-card { box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35); }
 
 .ongoing-eyebrow {
   display: inline-block;
@@ -1002,7 +1002,7 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
 
 /* Two-step price overview: the single number a non-technical visitor
    needs from each half of the section, before the detailed packages. */
-/* Deliberately vivid (not the neutral dark used by .creation-stage right
+/* Deliberately vivid (not the neutral dark used by .pricing-stage right
    below it) so the two bold moments don't blur into one another — this is
    the single most important number on the page, it gets the brand's most
    energetic treatment. */
@@ -1092,6 +1092,50 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
 .plan-price { font-family: var(--font-head); font-size: 2.2rem; font-weight: 700; color: var(--ink); }
 .plan-price span:first-child { font-size: 1rem; font-weight: 600; color: var(--muted); margin-right: 0.2rem; }
 .plan-price span:last-child { font-size: 1rem; font-weight: 500; color: var(--muted); }
+
+/* Monthly/yearly toggle: two markup variants per price, one hidden.
+   Explicit classes here (rather than :first-child) so this survives
+   regardless of the legacy rules above, which still serve the plain
+   Start/Grow/Individuell prices that only ever show one value. */
+.price-tier { display: none; align-items: baseline; gap: 0.2rem; }
+.price-tier:not([hidden]) { display: inline-flex; }
+.price-currency, .price-suffix { font-size: 1rem; font-weight: 600; color: var(--muted); }
+.price-amount { font-size: 2.2rem; font-weight: 700; color: var(--ink); }
+.pricing-stage .price-currency, .pricing-stage .price-suffix { color: rgba(255, 255, 255, 0.6); }
+.pricing-stage .price-amount { color: #fff; }
+
+.billing-toggle {
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  gap: 0.3rem;
+  padding: 0.3rem;
+  margin: 0 auto 2.5rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--dark-line);
+  border-radius: var(--r-full);
+}
+.billing-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--r-full);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: background 0.25s var(--ease), color 0.25s var(--ease);
+}
+.billing-toggle-btn.is-active { background: #fff; color: var(--ink); box-shadow: var(--shadow-soft); }
+.billing-save {
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--accent-ink);
+  background: var(--accent);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+}
 .plan-card .check-list { color: var(--muted); flex-grow: 1; }
 .plan-card .check-list .icon { color: var(--primary); }
 .plan-card .btn { margin-top: auto; }

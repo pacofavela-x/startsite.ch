@@ -512,7 +512,7 @@
 
       <!-- Erstellung -->
       <div class="pricing-creation">
-        <div class="creation-stage reveal">
+        <div class="pricing-stage reveal">
         <div class="ongoing-head">
           <span class="ongoing-eyebrow ongoing-eyebrow-dark">Schritt 1 · Einmalig</span>
           <h3>Erstellung deiner Website</h3>
@@ -565,16 +565,25 @@
 
       <!-- Laufender Betrieb -->
       <div class="pricing-ongoing">
-        <div class="ongoing-head reveal">
-          <span class="ongoing-eyebrow">Schritt 2 · Danach, optional</span>
+        <div class="pricing-stage reveal">
+        <div class="ongoing-head">
+          <span class="ongoing-eyebrow ongoing-eyebrow-dark">Schritt 2 · Danach, monatlich/jährlich</span>
           <h3>Laufender Betrieb – Hosting, Wartung &amp; Support</h3>
           <p>ab <strong>CHF 29.90.-/Monat</strong>, gestaffelt nach deinem Bedarf. Die folgenden Pakete sind Beispiele – wir stellen deinen Betrieb gerne individuell zusammen.</p>
+        </div>
+
+        <div class="billing-toggle" role="tablist" aria-label="Abrechnung wählen">
+          <button type="button" class="billing-toggle-btn is-active" data-billing="monthly" role="tab" aria-selected="true">Monatlich</button>
+          <button type="button" class="billing-toggle-btn" data-billing="yearly" role="tab" aria-selected="false">Jährlich <span class="billing-save">1 Monat gratis</span></button>
         </div>
 
         <div class="plans">
           <div class="plan-card reveal">
             <h4>Starter</h4>
-            <div class="plan-price"><span>CHF</span>29.90<span>.-/Monat</span></div>
+            <div class="plan-price">
+              <span class="price-tier price-monthly"><span class="price-currency">CHF</span><span class="price-amount">29.90</span><span class="price-suffix">.-/Monat</span></span>
+              <span class="price-tier price-yearly" hidden><span class="price-currency">CHF</span><span class="price-amount">328.90</span><span class="price-suffix">.-/Jahr</span></span>
+            </div>
             <ul class="check-list">
               <li><svg class="icon"><use href="#icon-check"></use></svg> Hosting &amp; SSL-Zertifikat</li>
               <li><svg class="icon"><use href="#icon-check"></use></svg> Domain-Verwaltung</li>
@@ -587,7 +596,10 @@
           <div class="plan-card plan-featured reveal">
             <span class="plan-tag">Beliebt</span>
             <h4>Business</h4>
-            <div class="plan-price"><span>CHF</span>49.90<span>.-/Monat</span></div>
+            <div class="plan-price">
+              <span class="price-tier price-monthly"><span class="price-currency">CHF</span><span class="price-amount">49.90</span><span class="price-suffix">.-/Monat</span></span>
+              <span class="price-tier price-yearly" hidden><span class="price-currency">CHF</span><span class="price-amount">548.90</span><span class="price-suffix">.-/Jahr</span></span>
+            </div>
             <ul class="check-list">
               <li><svg class="icon"><use href="#icon-check"></use></svg> Alles aus Starter</li>
               <li><svg class="icon"><use href="#icon-check"></use></svg> Persönliches E-Mail-Postfach</li>
@@ -599,7 +611,10 @@
 
           <div class="plan-card reveal">
             <h4>Premium</h4>
-            <div class="plan-price"><span>CHF</span>89.90<span>.-/Monat</span></div>
+            <div class="plan-price">
+              <span class="price-tier price-monthly"><span class="price-currency">CHF</span><span class="price-amount">89.90</span><span class="price-suffix">.-/Monat</span></span>
+              <span class="price-tier price-yearly" hidden><span class="price-currency">CHF</span><span class="price-amount">988.90</span><span class="price-suffix">.-/Jahr</span></span>
+            </div>
             <ul class="check-list">
               <li><svg class="icon"><use href="#icon-check"></use></svg> Alles aus Business</li>
               <li><svg class="icon"><use href="#icon-check"></use></svg> Monatliche Anpassungen</li>
@@ -610,6 +625,7 @@
           </div>
         </div>
         <p class="pricing-footnote">Beispielhafte Pakete – Umfang, Änderungen und Support passen wir individuell an deinen Bedarf an. Monatlich kündbar, keine Mindestlaufzeit.</p>
+        </div>
       </div>
     </div>
   </section>

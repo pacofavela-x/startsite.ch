@@ -9,6 +9,28 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------- Betrieb pricing: monthly/yearly toggle ---------- */
+  var billingToggle = document.querySelector(".billing-toggle");
+  if (billingToggle) {
+    var billingButtons = billingToggle.querySelectorAll(".billing-toggle-btn");
+    billingToggle.addEventListener("click", function (e) {
+      var btn = e.target.closest(".billing-toggle-btn");
+      if (!btn) return;
+      var billing = btn.getAttribute("data-billing");
+
+      billingButtons.forEach(function (b) {
+        var isActive = b === btn;
+        b.classList.toggle("is-active", isActive);
+        b.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+
+      document.querySelectorAll(".price-tier").forEach(function (tier) {
+        var matches = tier.classList.contains("price-" + billing);
+        tier.hidden = !matches;
+      });
+    });
+  }
+
   /* ---------- Hero mockup: cursor-driven 3D tilt + glossy highlight ---------- */
   var heroVisual = document.querySelector(".hero-visual");
   var tiltCard = document.getElementById("hero-tilt-card");
