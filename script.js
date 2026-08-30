@@ -31,6 +31,47 @@
     });
   }
 
+  /* ---------- Hero mockup: auto-cycling industry demo ---------- */
+  var demoStage = document.getElementById("demo-stage");
+  if (demoStage) {
+    var demoContent = demoStage.querySelector(".demo-content");
+    var demoDots = demoStage.querySelectorAll(".demo-dot");
+    var demoCategoryEl = document.getElementById("demo-category");
+    var demoHeadingEl = document.getElementById("demo-heading");
+    var demoCtaEl = document.getElementById("demo-cta");
+    var demoIconUse = document.querySelector("#demo-icon use");
+
+    var demoThemes = [
+      { theme: "indigo", category: "Coaching &amp; Beratung", heading: "Mehr Anfragen.<br>Weniger Aufwand.", cta: "Termin sichern", icon: "#icon-chat" },
+      { theme: "terracotta", category: "Gastronomie", heading: "Frisch serviert,<br>online bestellt.", cta: "Jetzt bestellen", icon: "#icon-coffee" },
+      { theme: "slate", category: "Handwerk &amp; Gewerbe", heading: "Qualität, die<br>man sieht.", cta: "Offerte anfragen", icon: "#icon-layers" }
+    ];
+    var demoIndex = 0;
+
+    var applyDemo = function (i) {
+      var d = demoThemes[i];
+      demoStage.setAttribute("data-theme", d.theme);
+      demoCategoryEl.innerHTML = d.category;
+      demoHeadingEl.innerHTML = d.heading;
+      demoCtaEl.textContent = d.cta;
+      demoIconUse.setAttribute("href", d.icon);
+      demoDots.forEach(function (dot, idx) {
+        dot.classList.toggle("is-active", idx === i);
+      });
+    };
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setInterval(function () {
+        demoIndex = (demoIndex + 1) % demoThemes.length;
+        demoContent.classList.add("is-swapping");
+        setTimeout(function () {
+          applyDemo(demoIndex);
+          demoContent.classList.remove("is-swapping");
+        }, 260);
+      }, 3800);
+    }
+  }
+
   /* ---------- Hero mockup: cursor-driven 3D tilt + glossy highlight ---------- */
   var heroVisual = document.querySelector(".hero-visual");
   var tiltCard = document.getElementById("hero-tilt-card");

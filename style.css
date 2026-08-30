@@ -416,139 +416,96 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
   border-radius: var(--r-full);
 }
 
-/* Live-builder canvas mockup — shows the act of building a site (drag
-   handles, tool rail, colour picker, "saving live" status) rather than a
-   single fictional client, since the product being sold is the build
-   process/craft itself, not one specific example site. */
-.builder-canvas { padding: 1.3rem 1.2rem 1.1rem; display: flex; flex-direction: column; gap: 1rem; }
-
-.builder-tools { display: flex; gap: 0.5rem; }
-.builder-tool {
-  width: 30px; height: 30px;
-  border-radius: 9px;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--bg-soft);
-  color: var(--muted-soft);
-  border: 1px solid var(--line);
-}
-.builder-tool .icon { width: 1rem; height: 1rem; }
-.builder-tool.is-active { background: var(--primary-tint); color: var(--primary-600); border-color: transparent; }
-
-.builder-main { display: grid; grid-template-columns: 1.3fr 1fr; gap: 0.9rem; align-items: center; }
-
-.builder-editable {
+/* Auto-cycling "which industry?" demo stage — instead of one fictional
+   client, the same mini-site morphs every few seconds through a handful of
+   generic categories (theme colour + headline + icon swap via JS, see
+   script.js). One DOM tree, re-themed via the data-theme attribute below,
+   so the crossfade only has to touch text content, not layout. */
+.demo-stage {
+  --demo-a: var(--primary);
+  --demo-b: var(--primary-light);
   position: relative;
-  padding: 0.9rem 1rem 1.1rem;
-  border-radius: 12px;
-  border: 1.5px dashed var(--primary-light);
-  background: var(--primary-tint);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  padding: 1.5rem 1.3rem 1.2rem;
 }
-.skeleton-line { height: 9px; border-radius: var(--r-full); background: linear-gradient(90deg, var(--primary-light), var(--primary)); opacity: 0.85; }
-.skeleton-line-lg { width: 88%; }
-.skeleton-line-md { width: 62%; opacity: 0.55; background: var(--primary-light); }
-.builder-cta-pill { margin-top: 0.25rem; width: 58px; height: 16px; border-radius: var(--r-full); background: var(--accent); }
+.demo-stage[data-theme="terracotta"] { --demo-a: #C97B3D; --demo-b: #E8985A; }
+.demo-stage[data-theme="slate"] { --demo-a: #3A3A4D; --demo-b: #6B6B87; }
 
-.drag-handle {
+.demo-tag {
   position: absolute;
-  width: 8px; height: 8px;
-  border-radius: 2px;
-  background: var(--surface);
-  border: 1.5px solid var(--primary);
-}
-.handle-tl { top: -5px; left: -5px; }
-.handle-tr { top: -5px; right: -5px; }
-.handle-bl { bottom: -5px; left: -5px; }
-.handle-br { bottom: -5px; right: -5px; }
-
-.builder-cursor {
-  position: absolute;
-  bottom: -10px;
-  right: -14px;
-  color: var(--ink);
-  filter: drop-shadow(0 3px 6px rgba(12, 10, 22, 0.25));
-  animation: cursor-tap 3.2s ease-in-out infinite;
-}
-@keyframes cursor-tap {
-  0%, 70%, 100% { transform: translate(0, 0) scale(1); }
-  78% { transform: translate(-3px, 3px) scale(0.92); }
-  86% { transform: translate(0, 0) scale(1); }
+  top: 0.9rem;
+  right: 1.1rem;
+  font-size: 0.54rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted-soft);
+  background: var(--bg-soft);
+  padding: 0.22rem 0.5rem;
+  border-radius: var(--r-full);
 }
 
-.builder-image-block {
+.demo-content { display: flex; flex-direction: column; gap: 1.1rem; transition: opacity 0.25s ease; }
+.demo-content.is-swapping { opacity: 0; }
+
+.demo-nav { display: flex; align-items: center; gap: 0.55rem; }
+.demo-logo-mini { width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, var(--demo-b), var(--demo-a)); flex-shrink: 0; transition: background 0.35s ease; }
+.demo-navlinks { display: flex; gap: 0.45rem; margin-left: 0.3rem; }
+.demo-navlinks span { width: 20px; height: 6px; border-radius: var(--r-full); background: var(--line); }
+.demo-pill { margin-left: auto; width: 52px; height: 16px; border-radius: var(--r-full); background: var(--demo-a); transition: background 0.35s ease; }
+
+.demo-hero-split { display: grid; grid-template-columns: 1.15fr 1fr; gap: 0.9rem; align-items: center; }
+.demo-hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+.demo-kicker { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: var(--demo-a); transition: color 0.35s ease; }
+.demo-heading { font-family: var(--font-head); font-weight: 600; font-size: 1rem; line-height: 1.25; color: var(--ink); }
+.demo-btn { margin-top: 0.3rem; display: inline-flex; padding: 0.45rem 0.85rem; border-radius: var(--r-full); background: var(--ink); color: #fff; font-size: 0.6rem; font-weight: 700; white-space: nowrap; }
+
+.demo-photo {
   height: 96px;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(150deg, var(--dark-soft), var(--dark));
+  background: linear-gradient(150deg, var(--demo-b), var(--demo-a));
+  box-shadow: 0 10px 24px rgba(12, 10, 22, 0.18);
+  transition: background 0.35s ease;
 }
-.builder-image-block .icon { width: 1.8rem; height: 1.8rem; color: var(--accent); opacity: 0.9; }
+.demo-photo .icon { width: 2rem; height: 2rem; color: #fff; opacity: 0.9; }
 
-.builder-footer { display: flex; align-items: center; gap: 0.5rem; padding-top: 0.9rem; border-top: 1px solid var(--line); }
-.swatch { width: 18px; height: 18px; border-radius: 50%; border: 2px solid transparent; box-shadow: 0 0 0 1px var(--line); }
-.swatch-primary { background: var(--primary); }
-.swatch-accent { background: var(--accent); }
-.swatch-dark { background: var(--dark); }
-.swatch.is-active { border-color: var(--surface); box-shadow: 0 0 0 2px var(--primary); }
-.builder-status {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.6rem;
-  font-weight: 600;
-  color: var(--muted-soft);
-  white-space: nowrap;
-}
-.status-dot { width: 6px; height: 6px; border-radius: 50%; background: #6FCF97; animation: status-pulse 1.8s ease-in-out infinite; flex-shrink: 0; }
-@keyframes status-pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(111, 207, 151, 0.5); }
-  50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(111, 207, 151, 0); }
-}
+.demo-dots { display: flex; gap: 0.4rem; justify-content: center; padding-top: 1rem; margin-top: 0.2rem; border-top: 1px solid var(--line); }
+.demo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--line); transition: background 0.35s ease, transform 0.35s ease; }
+.demo-dot.is-active { background: var(--demo-a); transform: scale(1.3); }
 
-/* Stacked "other designs" cards peeking out behind the main card — hints at
-   variety (many possible themes) without inventing more fictional clients. */
+/* Soft rotating glow behind the card — depth without another mockup. */
 .visual-stack { position: relative; }
-.stack-card {
+.visual-orbit {
   position: absolute;
-  width: 78%;
-  border-radius: var(--r-lg);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-soft);
-  overflow: hidden;
-  opacity: 0.7;
-  filter: saturate(0.85);
+  inset: -14% -10%;
+  z-index: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--primary-light), var(--accent), var(--primary), var(--primary-light));
+  filter: blur(60px);
+  opacity: 0.28;
+  animation: orbit-spin 16s linear infinite;
 }
-.stack-back-a { top: 6%; left: -6%; transform: rotate(-9deg); z-index: 0; }
-.stack-back-b { bottom: 4%; right: -8%; transform: rotate(8deg); z-index: 0; background: var(--dark); border-color: transparent; }
-.stack-mini-bar { display: flex; gap: 4px; padding: 0.55rem 0.7rem; background: var(--bg-soft); }
-.stack-back-b .stack-mini-bar { background: var(--dark-soft); }
-.stack-mini-bar span { width: 6px; height: 6px; border-radius: 50%; background: var(--line); }
-.stack-mini-body { padding: 0.8rem 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
-.stack-line { height: 7px; border-radius: var(--r-full); background: var(--line); }
-.stack-line-lg { width: 70%; }
-.stack-line-sm { width: 45%; }
-.stack-line-md { width: 55%; background: rgba(198, 255, 61, 0.6); }
-.stack-block { margin-top: 0.3rem; height: 46px; border-radius: 10px; background: linear-gradient(135deg, var(--primary-tint), var(--primary-light)); }
-.stack-mini-body-alt { gap: 0.6rem; }
-.stack-chip { width: 34px; height: 8px; border-radius: var(--r-full); background: var(--accent); }
-.stack-dots { display: flex; gap: 5px; margin-top: 0.2rem; }
-.stack-dots span { width: 5px; height: 5px; border-radius: 50%; background: rgba(255, 255, 255, 0.35); }
+@keyframes orbit-spin { to { transform: rotate(360deg); } }
 
 .browser-card-wrap { position: relative; z-index: 1; }
+
+.visual-caption {
+  margin-top: 1.4rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted-soft);
+}
 
 /* Rotating seal badge — spins independently of the card tilt, so it lives
    outside .browser-card rather than inside its 3D transform context. */
 .hero-badge {
   position: absolute;
-  top: 40%;
-  right: -13%;
-  width: 108px;
-  height: 108px;
+  top: -9%;
+  left: -8%;
+  width: 100px;
+  height: 100px;
   z-index: 2;
   pointer-events: none;
 }
@@ -595,10 +552,10 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
 }
 
 @media (max-width: 560px) {
-  .stack-back-a, .stack-back-b { display: none; }
-  .hero-badge { width: 84px; height: 84px; top: auto; bottom: -9%; right: -4%; }
-  .builder-main { grid-template-columns: 1fr; }
-  .builder-image-block { height: 64px; }
+  .hero-badge { width: 78px; height: 78px; top: -6%; left: -5%; }
+  .demo-hero-split { grid-template-columns: 1fr; }
+  .demo-photo { height: 64px; }
+  .visual-orbit { opacity: 0.18; }
 }
 
 .scroll-cue {
