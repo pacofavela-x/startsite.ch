@@ -1422,6 +1422,7 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
   opacity: 0.5;
   position: absolute;
   border-radius: 50%;
+  animation: float-slow 18s var(--ease) infinite alternate;
 }
 .contact-inner { position: relative; z-index: 1; }
 

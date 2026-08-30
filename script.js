@@ -161,8 +161,17 @@
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            revealObserver.unobserve(entry.target);
+            var el = entry.target;
+            el.classList.add("is-visible");
+            revealObserver.unobserve(el);
+            // The staggered transition-delay is only needed for this one
+            // reveal transition — left in place afterwards it would silently
+            // delay every later hover/interaction transition on the same
+            // element (transition-delay set inline outranks any stylesheet
+            // rule for that longhand, reveal or not).
+            window.setTimeout(function () {
+              el.style.transitionDelay = "";
+            }, 1200);
           }
         });
       },
