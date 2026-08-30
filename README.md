@@ -40,7 +40,7 @@ Alpine Momentum wurde umgesetzt, da sie Energie (Lime), Vertrauen (Indigo) und M
 - **Texte/Zahlen:** Referenzen-Zitate, Kundenname-Logos, Statistik-Zahlen (`50+`, `Ø 7 Tage` …) sind Platzhalter und sollten durch echte Werte ersetzt werden.
 - **Screenshots:** `images/og-image.svg` sowie die drei Mockup-Kacheln in der Referenzen-Section sind gestaltete Platzhalter (kein echter Website-Screenshot). Für Social-Sharing empfiehlt sich zusätzlich eine echte **PNG/JPG-Version** von `og-image.svg` (1200×630px), da nicht alle Plattformen SVG-OG-Bilder zuverlässig rendern.
 - **Rechtliches:** `impressum.html` und `datenschutz.html` enthalten Platzhalter in eckigen Klammern (`[...]`) — unbedingt durch echte Firmen-/Kontaktangaben ersetzen und bei Bedarf juristisch prüfen lassen.
-- **E-Mail:** Kontaktformular und Footer verweisen auf `hallo@startsite.ch` — Adresse bei Bedarf anpassen.
+- **E-Mail:** Kontaktformular und Footer verweisen auf `info@startsite.ch` — Adresse bei Bedarf anpassen.
 - **Kontaktformular:** Da die Seite rein statisch ist, öffnet der Formular-Submit aktuell einen `mailto:`-Link. Für ein "echtes" Formular ohne Backend eignet sich später z. B. Formspree, Web3Forms oder ein einfaches Serverless-Function-Setup.
 
 ## Performance & SEO

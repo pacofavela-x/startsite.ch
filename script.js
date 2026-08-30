@@ -230,12 +230,12 @@
         "Nachricht:\n" + (message || "(keine Nachricht angegeben)");
 
       var mailtoLink =
-        "mailto:hallo@startsite.ch" +
+        "mailto:info@startsite.ch" +
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(body);
 
       window.location.href = mailtoLink;
-      status.textContent = "Dein E-Mail-Programm öffnet sich gleich – falls nicht, ruf uns direkt an oder schreib uns an hallo@startsite.ch.";
+      status.textContent = "Dein E-Mail-Programm öffnet sich gleich – falls nicht, ruf uns direkt an oder schreib uns an info@startsite.ch.";
     });
   }
 
