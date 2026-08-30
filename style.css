@@ -388,7 +388,7 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
   background: var(--bg-soft);
   border-bottom: 1px solid var(--line);
 }
-.browser-bar span { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+.browser-bar span:not(.browser-bar-label) { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
 .browser-bar span:nth-child(1) { background: #FF6B6B; }
 .browser-bar span:nth-child(2) { background: #FFD166; }
 .browser-bar span:nth-child(3) { background: #6FCF97; }
@@ -405,63 +405,177 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
 }
 .browser-address .icon { width: 0.9em; height: 0.9em; flex-shrink: 0; }
 
-.browser-content { padding: 1.4rem 1.3rem; display: flex; flex-direction: column; gap: 1.1rem; }
+.browser-bar-label {
+  margin-left: auto;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--primary-600);
+  background: var(--primary-tint);
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--r-full);
+}
 
-/* Mini "client site" mockup — a fictional bakery site, standing in for the
-   kind of onepager startsite.ch would actually build. Deliberately styled
-   in a warm terracotta palette distinct from the startsite.ch brand colors,
-   to read as "someone else's site" inside our browser chrome. */
-.mock-nav { display: flex; align-items: center; gap: 0.55rem; }
-.mock-logo-mini { width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, #E8985A, #C97B3D); flex-shrink: 0; }
-.mock-brand { font-family: var(--font-head); font-weight: 700; font-size: 0.72rem; color: var(--ink); white-space: nowrap; }
-.mock-nav-links { display: flex; gap: 0.6rem; margin-left: 0.3rem; font-size: 0.62rem; color: var(--muted-soft); white-space: nowrap; }
-.mock-pill { margin-left: auto; padding: 0.32rem 0.7rem; border-radius: var(--r-full); background: #E8985A; color: #fff; font-size: 0.6rem; font-weight: 700; white-space: nowrap; }
+/* Live-builder canvas mockup — shows the act of building a site (drag
+   handles, tool rail, colour picker, "saving live" status) rather than a
+   single fictional client, since the product being sold is the build
+   process/craft itself, not one specific example site. */
+.builder-canvas { padding: 1.3rem 1.2rem 1.1rem; display: flex; flex-direction: column; gap: 1rem; }
 
-.mock-hero-split { display: grid; grid-template-columns: 1.15fr 1fr; gap: 0.9rem; align-items: center; }
-.mock-hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 0.4rem; }
-.mock-kicker { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: #C97B3D; }
-.mock-heading { font-family: var(--font-head); font-weight: 600; font-size: 1rem; line-height: 1.2; color: var(--ink); }
-.mock-btn { margin-top: 0.3rem; display: inline-flex; padding: 0.45rem 0.85rem; border-radius: var(--r-full); background: var(--ink); color: #fff; font-size: 0.6rem; font-weight: 700; white-space: nowrap; }
+.builder-tools { display: flex; gap: 0.5rem; }
+.builder-tool {
+  width: 30px; height: 30px;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-soft);
+  color: var(--muted-soft);
+  border: 1px solid var(--line);
+}
+.builder-tool .icon { width: 1rem; height: 1rem; }
+.builder-tool.is-active { background: var(--primary-tint); color: var(--primary-600); border-color: transparent; }
 
-.mock-photo {
+.builder-main { display: grid; grid-template-columns: 1.3fr 1fr; gap: 0.9rem; align-items: center; }
+
+.builder-editable {
   position: relative;
+  padding: 0.9rem 1rem 1.1rem;
+  border-radius: 12px;
+  border: 1.5px dashed var(--primary-light);
+  background: var(--primary-tint);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.skeleton-line { height: 9px; border-radius: var(--r-full); background: linear-gradient(90deg, var(--primary-light), var(--primary)); opacity: 0.85; }
+.skeleton-line-lg { width: 88%; }
+.skeleton-line-md { width: 62%; opacity: 0.55; background: var(--primary-light); }
+.builder-cta-pill { margin-top: 0.25rem; width: 58px; height: 16px; border-radius: var(--r-full); background: var(--accent); }
+
+.drag-handle {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 2px;
+  background: var(--surface);
+  border: 1.5px solid var(--primary);
+}
+.handle-tl { top: -5px; left: -5px; }
+.handle-tr { top: -5px; right: -5px; }
+.handle-bl { bottom: -5px; left: -5px; }
+.handle-br { bottom: -5px; right: -5px; }
+
+.builder-cursor {
+  position: absolute;
+  bottom: -10px;
+  right: -14px;
+  color: var(--ink);
+  filter: drop-shadow(0 3px 6px rgba(12, 10, 22, 0.25));
+  animation: cursor-tap 3.2s ease-in-out infinite;
+}
+@keyframes cursor-tap {
+  0%, 70%, 100% { transform: translate(0, 0) scale(1); }
+  78% { transform: translate(-3px, 3px) scale(0.92); }
+  86% { transform: translate(0, 0) scale(1); }
+}
+
+.builder-image-block {
   height: 96px;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(150deg, #F4C79A, #C97B3D);
-  box-shadow: 0 10px 24px rgba(201, 123, 61, 0.28);
+  background: linear-gradient(150deg, var(--dark-soft), var(--dark));
 }
-.mock-photo .icon { width: 2rem; height: 2rem; color: #fff; opacity: 0.9; }
-.mock-photo::before {
-  content: "";
-  position: absolute;
-  top: -14px; right: -14px;
-  width: 60px; height: 60px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.22);
-  filter: blur(1px);
-}
-.mock-rating {
-  position: absolute;
-  bottom: -10px;
-  left: 10px;
-  background: var(--surface);
-  color: var(--ink);
-  font-size: 0.54rem;
-  font-weight: 700;
-  padding: 0.32rem 0.55rem;
-  border-radius: var(--r-full);
-  box-shadow: var(--shadow-soft);
+.builder-image-block .icon { width: 1.8rem; height: 1.8rem; color: var(--accent); opacity: 0.9; }
+
+.builder-footer { display: flex; align-items: center; gap: 0.5rem; padding-top: 0.9rem; border-top: 1px solid var(--line); }
+.swatch { width: 18px; height: 18px; border-radius: 50%; border: 2px solid transparent; box-shadow: 0 0 0 1px var(--line); }
+.swatch-primary { background: var(--primary); }
+.swatch-accent { background: var(--accent); }
+.swatch-dark { background: var(--dark); }
+.swatch.is-active { border-color: var(--surface); box-shadow: 0 0 0 2px var(--primary); }
+.builder-status {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--muted-soft);
   white-space: nowrap;
 }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: #6FCF97; animation: status-pulse 1.8s ease-in-out infinite; flex-shrink: 0; }
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(111, 207, 151, 0.5); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(111, 207, 151, 0); }
+}
 
-.mock-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; padding-top: 0.9rem; border-top: 1px solid var(--line); }
-.mock-feature { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; text-align: center; }
-.mock-feature-icon { width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center; background: var(--bg-soft); color: #C97B3D; }
-.mock-feature-icon .icon { width: 1rem; height: 1rem; }
-.mock-feature span:last-child { font-size: 0.56rem; font-weight: 600; line-height: 1.2; color: var(--muted); }
+/* Stacked "other designs" cards peeking out behind the main card — hints at
+   variety (many possible themes) without inventing more fictional clients. */
+.visual-stack { position: relative; }
+.stack-card {
+  position: absolute;
+  width: 78%;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  opacity: 0.7;
+  filter: saturate(0.85);
+}
+.stack-back-a { top: 6%; left: -6%; transform: rotate(-9deg); z-index: 0; }
+.stack-back-b { bottom: 4%; right: -8%; transform: rotate(8deg); z-index: 0; background: var(--dark); border-color: transparent; }
+.stack-mini-bar { display: flex; gap: 4px; padding: 0.55rem 0.7rem; background: var(--bg-soft); }
+.stack-back-b .stack-mini-bar { background: var(--dark-soft); }
+.stack-mini-bar span { width: 6px; height: 6px; border-radius: 50%; background: var(--line); }
+.stack-mini-body { padding: 0.8rem 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.stack-line { height: 7px; border-radius: var(--r-full); background: var(--line); }
+.stack-line-lg { width: 70%; }
+.stack-line-sm { width: 45%; }
+.stack-line-md { width: 55%; background: rgba(198, 255, 61, 0.6); }
+.stack-block { margin-top: 0.3rem; height: 46px; border-radius: 10px; background: linear-gradient(135deg, var(--primary-tint), var(--primary-light)); }
+.stack-mini-body-alt { gap: 0.6rem; }
+.stack-chip { width: 34px; height: 8px; border-radius: var(--r-full); background: var(--accent); }
+.stack-dots { display: flex; gap: 5px; margin-top: 0.2rem; }
+.stack-dots span { width: 5px; height: 5px; border-radius: 50%; background: rgba(255, 255, 255, 0.35); }
+
+.browser-card-wrap { position: relative; z-index: 1; }
+
+/* Rotating seal badge — spins independently of the card tilt, so it lives
+   outside .browser-card rather than inside its 3D transform context. */
+.hero-badge {
+  position: absolute;
+  top: 40%;
+  right: -13%;
+  width: 108px;
+  height: 108px;
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-badge-ring {
+  width: 100%;
+  height: 100%;
+  color: var(--primary);
+  animation: badge-spin 22s linear infinite;
+}
+.hero-badge-core {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-ink);
+  background: var(--accent);
+  width: 30px; height: 30px;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: var(--shadow-soft);
+}
+.hero-badge-core .icon { width: 1rem; height: 1rem; }
+@keyframes badge-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
 .floating-chip {
   position: absolute;
@@ -478,6 +592,13 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
 @keyframes chip-bob {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 560px) {
+  .stack-back-a, .stack-back-b { display: none; }
+  .hero-badge { width: 84px; height: 84px; top: auto; bottom: -9%; right: -4%; }
+  .builder-main { grid-template-columns: 1fr; }
+  .builder-image-block { height: 64px; }
 }
 
 .scroll-cue {

@@ -143,55 +143,84 @@
       </div>
 
       <div class="hero-visual reveal" aria-hidden="true">
-        <div class="browser-card-wrap">
-          <div class="browser-card" id="hero-tilt-card">
-            <div class="browser-bar">
-              <span></span><span></span><span></span>
+        <div class="visual-stack">
+          <div class="stack-card stack-back-a">
+            <div class="stack-mini-bar"><span></span><span></span><span></span></div>
+            <div class="stack-mini-body">
+              <div class="stack-line stack-line-lg"></div>
+              <div class="stack-line stack-line-sm"></div>
+              <div class="stack-block"></div>
             </div>
-            <div class="browser-address">
-              <svg class="icon"><use href="#icon-lock"></use></svg>
-              <span>beispiel-baeckerei.ch</span>
+          </div>
+          <div class="stack-card stack-back-b">
+            <div class="stack-mini-bar"><span></span><span></span><span></span></div>
+            <div class="stack-mini-body stack-mini-body-alt">
+              <div class="stack-chip"></div>
+              <div class="stack-line stack-line-md"></div>
+              <div class="stack-dots"><span></span><span></span><span></span></div>
             </div>
-            <div class="browser-content">
-              <div class="mock-nav">
-                <span class="mock-logo-mini" aria-hidden="true"></span>
-                <span class="mock-brand">Bäckerei Grüter</span>
-                <span class="mock-nav-links">
-                  <span>Angebot</span>
-                  <span>Über uns</span>
-                </span>
-                <span class="mock-pill">Bestellen</span>
+          </div>
+
+          <div class="browser-card-wrap">
+            <div class="browser-card" id="hero-tilt-card">
+              <div class="browser-bar">
+                <span></span><span></span><span></span>
+                <span class="browser-bar-label">Live-Editor</span>
+              </div>
+              <div class="browser-address">
+                <svg class="icon"><use href="#icon-lock"></use></svg>
+                <span>deine-website.ch</span>
               </div>
 
-              <div class="mock-hero-split">
-                <div class="mock-hero-copy">
-                  <span class="mock-kicker">Frisch. Lokal. Von Hand.</span>
-                  <p class="mock-heading">Dein Brot,<br>heute gebacken.</p>
-                  <span class="mock-btn">Jetzt vorbestellen</span>
+              <div class="builder-canvas">
+                <div class="builder-tools">
+                  <span class="builder-tool is-active"><svg class="icon"><use href="#icon-layers"></use></svg></span>
+                  <span class="builder-tool"><svg class="icon"><use href="#icon-chat"></use></svg></span>
+                  <span class="builder-tool"><svg class="icon"><use href="#icon-sparkle"></use></svg></span>
+                  <span class="builder-tool"><svg class="icon"><use href="#icon-shield"></use></svg></span>
                 </div>
-                <div class="mock-photo">
-                  <svg class="icon"><use href="#icon-coffee"></use></svg>
-                  <span class="mock-rating">⭐ 4.9 · 128 Bewertungen</span>
+
+                <div class="builder-main">
+                  <div class="builder-editable">
+                    <span class="drag-handle handle-tl"></span>
+                    <span class="drag-handle handle-tr"></span>
+                    <span class="drag-handle handle-bl"></span>
+                    <span class="drag-handle handle-br"></span>
+                    <div class="skeleton-line skeleton-lg"></div>
+                    <div class="skeleton-line skeleton-md"></div>
+                    <span class="builder-cta-pill"></span>
+                    <span class="builder-cursor">
+                      <svg viewBox="0 0 24 24"><path d="M4 3l15 6.5-6 2-2.5 6L4 3Z" fill="currentColor"/></svg>
+                    </span>
+                  </div>
+                  <div class="builder-image-block">
+                    <svg class="icon"><use href="#icon-layers"></use></svg>
+                  </div>
+                </div>
+
+                <div class="builder-footer">
+                  <span class="swatch swatch-primary is-active"></span>
+                  <span class="swatch swatch-accent"></span>
+                  <span class="swatch swatch-dark"></span>
+                  <span class="builder-status"><span class="status-dot"></span>Änderungen werden live gespeichert</span>
                 </div>
               </div>
 
-              <div class="mock-features">
-                <div class="mock-feature">
-                  <span class="mock-feature-icon"><svg class="icon"><use href="#icon-leaf"></use></svg></span>
-                  <span>Bio-Zutaten</span>
-                </div>
-                <div class="mock-feature">
-                  <span class="mock-feature-icon"><svg class="icon"><use href="#icon-heart"></use></svg></span>
-                  <span>Mit Liebe gemacht</span>
-                </div>
-                <div class="mock-feature">
-                  <span class="mock-feature-icon"><svg class="icon"><use href="#icon-truck"></use></svg></span>
-                  <span>Lieferservice</span>
-                </div>
-              </div>
+              <span class="floating-chip chip-1">⚡ Launch in 7 Tagen</span>
+              <span class="floating-chip chip-2">🇨🇭 100% Swiss Made</span>
             </div>
-            <span class="floating-chip chip-1">🚀 Live in 7 Tagen</span>
-            <span class="floating-chip chip-2">✓ 100% Responsive</span>
+          </div>
+
+          <div class="hero-badge">
+            <svg viewBox="0 0 120 120" class="hero-badge-ring">
+              <defs><path id="badge-circle-path" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+              <text font-size="8.4" font-weight="700" letter-spacing="2.2" fill="currentColor">
+                <textPath href="#badge-circle-path" startOffset="0%">SCHNELL &#8226; PERSÖNLICH &#8226; SCHWEIZER QUALITÄT &#8226; </textPath>
+              </text>
+            </svg>
+            <span class="hero-badge-core">
+              <svg class="icon"><use href="#icon-sparkle"></use></svg>
+            </span>
           </div>
         </div>
       </div>
