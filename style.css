@@ -529,6 +529,18 @@ h3 { font-size: clamp(1.15rem, 1vw + 1rem, 1.4rem); }
   color: var(--accent);
 }
 .stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+.stat-tag {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--accent-ink);
+  background: var(--accent);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--r-full);
+  margin-bottom: 0.3rem;
+}
 
 .trust-logos { margin-top: 3rem; text-align: center; }
 .trust-logos-label { font-size: 0.85rem; color: var(--muted-soft); margin-bottom: 1.5rem; }
